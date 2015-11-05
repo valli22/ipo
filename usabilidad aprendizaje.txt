@@ -1,0 +1,8 @@
+Prediccion-> la creación de viñetas como esta detallado en el HTA es una 
+actividad repetitiva y por lo tanto una vez se ha realizado una vez los pasos a 
+seguir para crear otra viñeta serían parecidos; si no los mismos.
+Fammiliaridad -> al ser un programa con una interfaz muy parecida al PowerPoint,
+herramienta que han utilizado o suelen utilizar los usuarios, permite un rapido
+aprendizaje de las funciones disponibles.
+Consistencia -> a la hora de añadir elementos exteriores, saldrá una ventana 
+emergente igual para seleccionar cada elemeto.
