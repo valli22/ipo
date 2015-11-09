@@ -27,7 +27,7 @@ public class principal extends javax.swing.JFrame {
      * Creates new form principal
      */
     DefaultListModel viñetas;
-    int i = 1;
+    int i = 0;
     
 
     public principal() {
@@ -43,6 +43,7 @@ public class principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
         iconoNuevoProyecto = new javax.swing.JButton();
         iconoGuardarProyecto = new javax.swing.JButton();
         iconoAnadirVideo = new javax.swing.JButton();
@@ -76,6 +77,17 @@ public class principal extends javax.swing.JFrame {
         presentacionPresentacionV = new javax.swing.JMenuItem();
         menuAyuda = new javax.swing.JMenu();
         ayudaAcercaDe = new javax.swing.JMenuItem();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Viñetas");
@@ -238,6 +250,11 @@ public class principal extends javax.swing.JFrame {
 
         edicionEliminarV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarV.png"))); // NOI18N
         edicionEliminarV.setText("Eliminar viñeta");
+        edicionEliminarV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edicionEliminarVActionPerformed(evt);
+            }
+        });
         menuEdicion.add(edicionEliminarV);
 
         edicionFormatoT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/textbox.png"))); // NOI18N
@@ -268,6 +285,11 @@ public class principal extends javax.swing.JFrame {
 
         presentacionPresentacionV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/presentation.jpg"))); // NOI18N
         presentacionPresentacionV.setText("Presentacion viñetas");
+        presentacionPresentacionV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                presentacionPresentacionVActionPerformed(evt);
+            }
+        });
         menuPresentacion.add(presentacionPresentacionV);
 
         jMenuBar1.add(menuPresentacion);
@@ -276,6 +298,11 @@ public class principal extends javax.swing.JFrame {
 
         ayudaAcercaDe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ayuda.png"))); // NOI18N
         ayudaAcercaDe.setText("Acerca de Viñetas.exe");
+        ayudaAcercaDe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ayudaAcercaDeActionPerformed(evt);
+            }
+        });
         menuAyuda.add(ayudaAcercaDe);
 
         jMenuBar1.add(menuAyuda);
@@ -337,7 +364,6 @@ public class principal extends javax.swing.JFrame {
         vinetas.removeAllElements();
         i=1;
         vinetas.addElement("Viñeta "+i);
-        i++;
         listaVinetas.setSelectedIndex(0);
     }//GEN-LAST:event_archivoNuevoActionPerformed
 
@@ -377,7 +403,6 @@ public class principal extends javax.swing.JFrame {
         vinetas.removeAllElements();
         i=1;
         vinetas.addElement("Viñeta "+i);
-        i++;
         listaVinetas.setSelectedIndex(0);
     }//GEN-LAST:event_iconoNuevoProyectoActionPerformed
 
@@ -395,19 +420,49 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_edicionFormatoTActionPerformed
 
     private void edicionInsertarInsertarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarInsertarVActionPerformed
-        vinetas.addElement("Viñeta "+i);
-        i++;
-        listaVinetas.setSelectedIndex(0);
+        if(i>=1){
+            i++;
+            vinetas.addElement("Viñeta "+i);
+            listaVinetas.setSelectedIndex(0);
+        }else {
+            javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
+        }
     }//GEN-LAST:event_edicionInsertarInsertarVActionPerformed
 
     private void edicionInsertarAnadirIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirIPActionPerformed
+        if(i>=1){
         Frame principal = null;
         JDialog dialogo = new JDialog(principal,"Elije imagen");
         anadirImgPredef panel = new anadirImgPredef();
         dialogo.setSize(600, 600);
         dialogo.add(panel);
         dialogo.setVisible(true);
+        }else {
+            javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
+        }
     }//GEN-LAST:event_edicionInsertarAnadirIPActionPerformed
+
+    private void edicionEliminarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionEliminarVActionPerformed
+        
+    }//GEN-LAST:event_edicionEliminarVActionPerformed
+
+    private void presentacionPresentacionVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presentacionPresentacionVActionPerformed
+        Frame principal = null;
+        JDialog dialogo = new JDialog(principal,"Presentacion");
+        presentacion panel = new presentacion();
+        dialogo.setSize(1500, 1000);
+        dialogo.add(panel);
+        dialogo.setVisible(true);
+    }//GEN-LAST:event_presentacionPresentacionVActionPerformed
+
+    private void ayudaAcercaDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaAcercaDeActionPerformed
+        Frame principal = null;
+        JDialog dialogo = new JDialog(principal,"Ayuda");
+        ayuda panel = new ayuda();
+        dialogo.setSize(500, 300);
+        dialogo.add(panel);
+        dialogo.setVisible(true);
+    }//GEN-LAST:event_ayudaAcercaDeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -466,6 +521,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton iconoGuardarProyecto;
     private javax.swing.JButton iconoNuevoProyecto;
     private javax.swing.JButton iconoPresentacion;
+    private javax.swing.JDialog jDialog1;
     public static javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
