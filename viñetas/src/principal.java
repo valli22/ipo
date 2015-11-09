@@ -1,7 +1,11 @@
 
+import java.awt.Dimension;
+import java.awt.Frame;
+import java.awt.Graphics;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -18,14 +22,14 @@ import javax.swing.JOptionPane;
  */
 public class principal extends javax.swing.JFrame {
    
-
+    
     /**
      * Creates new form principal
      */
     DefaultListModel viñetas;
     int i = 1;
     
-    
+
     public principal() {
         initComponents();
     }
@@ -219,6 +223,11 @@ public class principal extends javax.swing.JFrame {
 
         edicionInsertarAnadirIP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/imagen predefinida.jpg"))); // NOI18N
         edicionInsertarAnadirIP.setText("Añadir imagen predefinida");
+        edicionInsertarAnadirIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edicionInsertarAnadirIPActionPerformed(evt);
+            }
+        });
         edicionInsertar.add(edicionInsertarAnadirIP);
 
         edicionInsertarAnadirA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/animacion.jpg"))); // NOI18N
@@ -391,6 +400,15 @@ public class principal extends javax.swing.JFrame {
         listaVinetas.setSelectedIndex(0);
     }//GEN-LAST:event_edicionInsertarInsertarVActionPerformed
 
+    private void edicionInsertarAnadirIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirIPActionPerformed
+        Frame principal = null;
+        JDialog dialogo = new JDialog(principal,"Elije imagen");
+        anadirImgPredef panel = new anadirImgPredef();
+        dialogo.setSize(600, 600);
+        dialogo.add(panel);
+        dialogo.setVisible(true);
+    }//GEN-LAST:event_edicionInsertarAnadirIPActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -448,7 +466,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton iconoGuardarProyecto;
     private javax.swing.JButton iconoNuevoProyecto;
     private javax.swing.JButton iconoPresentacion;
-    private javax.swing.JEditorPane jEditorPane1;
+    public static javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
