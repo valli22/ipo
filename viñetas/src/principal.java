@@ -1,6 +1,8 @@
 
 import java.io.File;
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -52,6 +54,7 @@ public class principal extends javax.swing.JFrame {
         listaVinetas = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
         panelEdicion = new javax.swing.JPanel();
+        scrollbar1 = new java.awt.Scrollbar();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuArchivo = new javax.swing.JMenu();
         archivoNuevo = new javax.swing.JMenuItem();
@@ -90,7 +93,7 @@ public class principal extends javax.swing.JFrame {
 
         jToolBar6.setRollover(true);
 
-        iconoNuevoProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main_New_Project.png"))); // NOI18N
+        iconoNuevoProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Main_New_Project.png"))); // NOI18N
         iconoNuevoProyecto.setToolTipText("Nuevo proyecto");
         iconoNuevoProyecto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         iconoNuevoProyecto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -103,7 +106,7 @@ public class principal extends javax.swing.JFrame {
             }
         });
 
-        iconoGuardarProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/save the world.png"))); // NOI18N
+        iconoGuardarProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save the world.png"))); // NOI18N
         iconoGuardarProyecto.setToolTipText("Guardar proyecto");
         iconoGuardarProyecto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         iconoGuardarProyecto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -116,7 +119,7 @@ public class principal extends javax.swing.JFrame {
             }
         });
 
-        iconoAnadirVideo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/video.jpg"))); // NOI18N
+        iconoAnadirVideo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/video.jpg"))); // NOI18N
         iconoAnadirVideo.setToolTipText("Añadir video");
         iconoAnadirVideo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         iconoAnadirVideo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -124,7 +127,7 @@ public class principal extends javax.swing.JFrame {
         iconoAnadirVideo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         iconoAnadirVideo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        iconoAnadirImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gallery.png"))); // NOI18N
+        iconoAnadirImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gallery.png"))); // NOI18N
         iconoAnadirImagen.setToolTipText("Añadir imagen");
         iconoAnadirImagen.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         iconoAnadirImagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -139,7 +142,7 @@ public class principal extends javax.swing.JFrame {
 
         jToolBar7.setRollover(true);
 
-        iconoPresentacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentation.jpg"))); // NOI18N
+        iconoPresentacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/presentation.jpg"))); // NOI18N
         iconoPresentacion.setToolTipText("Presentacion");
         iconoPresentacion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         iconoPresentacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -147,7 +150,7 @@ public class principal extends javax.swing.JFrame {
         iconoPresentacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         iconoPresentacion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        iconoAnadirCuadroTexto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anadirCuadrotextp.png"))); // NOI18N
+        iconoAnadirCuadroTexto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/anadirCuadrotextp.png"))); // NOI18N
         iconoAnadirCuadroTexto.setToolTipText("Añadir cuadro de texto");
         iconoAnadirCuadroTexto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         iconoAnadirCuadroTexto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -175,12 +178,12 @@ public class principal extends javax.swing.JFrame {
         );
         panelEdicionLayout.setVerticalGroup(
             panelEdicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 409, Short.MAX_VALUE)
         );
 
         menuArchivo.setText("Archivo");
 
-        archivoNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main_New_Project.png")));
+        archivoNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Main_New_Project.png"))); // NOI18N
 
         archivoNuevo.setText("Nuevo proyecto");
         archivoNuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +193,7 @@ public class principal extends javax.swing.JFrame {
         });
         menuArchivo.add(archivoNuevo);
 
-        archivoAbrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abrir.png"))); // NOI18N
+        archivoAbrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/abrir.png"))); // NOI18N
         archivoAbrir.setText("Abrir proyecto");
         archivoAbrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,7 +202,7 @@ public class principal extends javax.swing.JFrame {
         });
         menuArchivo.add(archivoAbrir);
 
-        archivoGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/save the world.png"))); // NOI18N
+        archivoGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save the world.png"))); // NOI18N
         archivoGuardar.setText("Guardar proyecto");
         archivoGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,7 +211,7 @@ public class principal extends javax.swing.JFrame {
         });
         menuArchivo.add(archivoGuardar);
 
-        archivoSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit.png"))); // NOI18N
+        archivoSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
         archivoSalir.setText("Salir del programa");
         archivoSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,14 +224,14 @@ public class principal extends javax.swing.JFrame {
 
         menuEdicion.setText("Edicion");
 
-        edicionInsertar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/insert.png"))); // NOI18N
+        edicionInsertar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/insert.png"))); // NOI18N
         edicionInsertar.setText("Insertar");
 
-        edicionInsertarInsertarV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/insert page.png"))); // NOI18N
+        edicionInsertarInsertarV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/insert page.png"))); // NOI18N
         edicionInsertarInsertarV.setText("Insertar viñeta");
         edicionInsertar.add(edicionInsertarInsertarV);
 
-        edicionInsertarImportarI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gallery.png"))); // NOI18N
+        edicionInsertarImportarI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gallery.png"))); // NOI18N
         edicionInsertarImportarI.setText("Importar Imagen");
         edicionInsertarImportarI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,29 +240,34 @@ public class principal extends javax.swing.JFrame {
         });
         edicionInsertar.add(edicionInsertarImportarI);
 
-        edicionInsertarAnadirVid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/video.jpg"))); // NOI18N
+        edicionInsertarAnadirVid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/video.jpg"))); // NOI18N
         edicionInsertarAnadirVid.setText("Añadir video");
         edicionInsertar.add(edicionInsertarAnadirVid);
 
-        edicionInsertarAnadirIP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen predefinida.jpg"))); // NOI18N
+        edicionInsertarAnadirIP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/imagen predefinida.jpg"))); // NOI18N
         edicionInsertarAnadirIP.setText("Añadir imagen predefinida");
         edicionInsertar.add(edicionInsertarAnadirIP);
 
-        edicionInsertarAnadirA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/animacion.jpg"))); // NOI18N
+        edicionInsertarAnadirA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/animacion.jpg"))); // NOI18N
         edicionInsertarAnadirA.setText("Añadir animacion");
         edicionInsertar.add(edicionInsertarAnadirA);
 
         menuEdicion.add(edicionInsertar);
 
-        edicionEliminarV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eliminarV.png"))); // NOI18N
+        edicionEliminarV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarV.png"))); // NOI18N
         edicionEliminarV.setText("Eliminar viñeta");
         menuEdicion.add(edicionEliminarV);
 
-        edicionFormatoT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/textbox.png"))); // NOI18N
+        edicionFormatoT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/textbox.png"))); // NOI18N
         edicionFormatoT.setText("Formato de texto");
+        edicionFormatoT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edicionFormatoTActionPerformed(evt);
+            }
+        });
         menuEdicion.add(edicionFormatoT);
 
-        edicionAnadirCT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anadirCuadrotextp.png"))); // NOI18N
+        edicionAnadirCT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/anadirCuadrotextp.png"))); // NOI18N
         edicionAnadirCT.setText("Añadir cuadro de texto");
         menuEdicion.add(edicionAnadirCT);
 
@@ -267,7 +275,7 @@ public class principal extends javax.swing.JFrame {
 
         menuPresentacion.setText("Presentacion");
 
-        presentacionVistaPrevia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista previa.png"))); // NOI18N
+        presentacionVistaPrevia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vista previa.png"))); // NOI18N
         presentacionVistaPrevia.setText("Visualizacion vista previa");
         presentacionVistaPrevia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -276,7 +284,7 @@ public class principal extends javax.swing.JFrame {
         });
         menuPresentacion.add(presentacionVistaPrevia);
 
-        presentacionPresentacionV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentation.jpg"))); // NOI18N
+        presentacionPresentacionV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/presentation.jpg"))); // NOI18N
         presentacionPresentacionV.setText("Presentacion viñetas");
         menuPresentacion.add(presentacionPresentacionV);
 
@@ -284,7 +292,7 @@ public class principal extends javax.swing.JFrame {
 
         menuAyuda.setText("Ayuda");
 
-        ayudaAcercaDe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ayuda.png"))); // NOI18N
+        ayudaAcercaDe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ayuda.png"))); // NOI18N
         ayudaAcercaDe.setText("Acerca de Viñetas.exe");
         menuAyuda.add(ayudaAcercaDe);
 
@@ -300,18 +308,20 @@ public class principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane1)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(iconoNuevoProyecto)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(iconoGuardarProyecto)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(iconoAnadirVideo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(iconoAnadirImagen)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(iconoAnadirCuadroTexto)))
+                                .addComponent(iconoAnadirImagen))
+                            .addComponent(jScrollPane1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(scrollbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(iconoAnadirCuadroTexto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -357,7 +367,8 @@ public class principal extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelEdicion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
+                    .addComponent(scrollbar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -365,12 +376,12 @@ public class principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void archivoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoNuevoActionPerformed
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(this);        
+           
     }//GEN-LAST:event_archivoNuevoActionPerformed
 
     private void archivoGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoGuardarActionPerformed
         JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Guardar proyecto");
         chooser.showOpenDialog(this); 
     }//GEN-LAST:event_archivoGuardarActionPerformed
 
@@ -380,6 +391,7 @@ public class principal extends javax.swing.JFrame {
 
     private void iconoGuardarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoGuardarProyectoActionPerformed
         JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Guardar proyecto");
         chooser.showOpenDialog(this);
     }//GEN-LAST:event_iconoGuardarProyectoActionPerformed
 
@@ -389,23 +401,29 @@ public class principal extends javax.swing.JFrame {
 
     private void archivoAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoAbrirActionPerformed
         JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Abrir proyecto");
         chooser.showOpenDialog(this);   
     }//GEN-LAST:event_archivoAbrirActionPerformed
 
     private void edicionInsertarImportarIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarImportarIActionPerformed
         JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Importar imagen");
         chooser.showOpenDialog(this);
     }//GEN-LAST:event_edicionInsertarImportarIActionPerformed
 
     private void iconoNuevoProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoNuevoProyectoActionPerformed
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(this);
+     
     }//GEN-LAST:event_iconoNuevoProyectoActionPerformed
 
     private void iconoAnadirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirImagenActionPerformed
         JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Importar imagen");
         chooser.showOpenDialog(this);
     }//GEN-LAST:event_iconoAnadirImagenActionPerformed
+
+    private void edicionFormatoTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionFormatoTActionPerformed
+        
+    }//GEN-LAST:event_edicionFormatoTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -485,5 +503,6 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JPanel panelEdicion;
     private javax.swing.JMenuItem presentacionPresentacionV;
     private javax.swing.JMenuItem presentacionVistaPrevia;
+    private java.awt.Scrollbar scrollbar1;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,8 +35,8 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="archivoNuevo">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="&#xa;">
-                  <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/Main_New_Project.png&quot;))" type="code"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor" preCode="&#xa;">
+                  <Image iconType="3" name="/images/Main_New_Project.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="&#xa;">
                   <Connection code="&quot;Nuevo proyecto&quot;" type="code"/>
@@ -49,7 +49,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="archivoAbrir">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/abrir.png"/>
+                  <Image iconType="3" name="/images/abrir.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Abrir proyecto"/>
               </Properties>
@@ -60,7 +60,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="archivoGuardar">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/save the world.png"/>
+                  <Image iconType="3" name="/images/save the world.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Guardar proyecto"/>
               </Properties>
@@ -71,7 +71,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="archivoSalir">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/exit.png"/>
+                  <Image iconType="3" name="/images/exit.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Salir del programa"/>
               </Properties>
@@ -89,7 +89,7 @@
             <Menu class="javax.swing.JMenu" name="edicionInsertar">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/insert.png"/>
+                  <Image iconType="3" name="/images/insert.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Insertar"/>
               </Properties>
@@ -97,7 +97,7 @@
                 <MenuItem class="javax.swing.JMenuItem" name="edicionInsertarInsertarV">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/insert page.png"/>
+                      <Image iconType="3" name="/images/insert page.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Insertar vi&#xf1;eta"/>
                   </Properties>
@@ -105,7 +105,7 @@
                 <MenuItem class="javax.swing.JMenuItem" name="edicionInsertarImportarI">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/gallery.png"/>
+                      <Image iconType="3" name="/images/gallery.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Importar Imagen"/>
                   </Properties>
@@ -116,7 +116,7 @@
                 <MenuItem class="javax.swing.JMenuItem" name="edicionInsertarAnadirVid">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/video.jpg"/>
+                      <Image iconType="3" name="/images/video.jpg"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="A&#xf1;adir video"/>
                   </Properties>
@@ -124,7 +124,7 @@
                 <MenuItem class="javax.swing.JMenuItem" name="edicionInsertarAnadirIP">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/imagen predefinida.jpg"/>
+                      <Image iconType="3" name="/images/imagen predefinida.jpg"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="A&#xf1;adir imagen predefinida"/>
                   </Properties>
@@ -132,7 +132,7 @@
                 <MenuItem class="javax.swing.JMenuItem" name="edicionInsertarAnadirA">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/animacion.jpg"/>
+                      <Image iconType="3" name="/images/animacion.jpg"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="A&#xf1;adir animacion"/>
                   </Properties>
@@ -142,7 +142,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="edicionEliminarV">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/eliminarV.png"/>
+                  <Image iconType="3" name="/images/eliminarV.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Eliminar vi&#xf1;eta"/>
               </Properties>
@@ -150,15 +150,18 @@
             <MenuItem class="javax.swing.JMenuItem" name="edicionFormatoT">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/textbox.png"/>
+                  <Image iconType="3" name="/images/textbox.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Formato de texto"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edicionFormatoTActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="edicionAnadirCT">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/anadirCuadrotextp.png"/>
+                  <Image iconType="3" name="/images/anadirCuadrotextp.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="A&#xf1;adir cuadro de texto"/>
               </Properties>
@@ -173,7 +176,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="presentacionVistaPrevia">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/vista previa.png"/>
+                  <Image iconType="3" name="/images/vista previa.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Visualizacion vista previa"/>
               </Properties>
@@ -184,7 +187,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="presentacionPresentacionV">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/presentation.jpg"/>
+                  <Image iconType="3" name="/images/presentation.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Presentacion vi&#xf1;etas"/>
               </Properties>
@@ -199,7 +202,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="ayudaAcercaDe">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/ayuda.png"/>
+                  <Image iconType="3" name="/images/ayuda.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Acerca de Vi&#xf1;etas.exe"/>
               </Properties>
@@ -240,9 +243,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jScrollPane1" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Component id="iconoNuevoProyecto" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="iconoGuardarProyecto" min="-2" max="-2" attributes="0"/>
@@ -250,9 +252,13 @@
                               <Component id="iconoAnadirVideo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="iconoAnadirImagen" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="iconoAnadirCuadroTexto" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jScrollPane1" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="scrollbar1" min="-2" max="-2" attributes="0"/>
+                          <Component id="iconoAnadirCuadroTexto" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -308,6 +314,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="panelEdicion" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" pref="409" max="32767" attributes="0"/>
+                  <Component id="scrollbar1" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -360,7 +367,7 @@
     <Component class="javax.swing.JButton" name="iconoNuevoProyecto">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Main_New_Project.png"/>
+          <Image iconType="3" name="/images/Main_New_Project.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Nuevo proyecto"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -382,7 +389,7 @@
     <Component class="javax.swing.JButton" name="iconoGuardarProyecto">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/save the world.png"/>
+          <Image iconType="3" name="/images/save the world.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Guardar proyecto"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -404,7 +411,7 @@
     <Component class="javax.swing.JButton" name="iconoAnadirVideo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/video.jpg"/>
+          <Image iconType="3" name="/images/video.jpg"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="A&#xf1;adir video"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -423,7 +430,7 @@
     <Component class="javax.swing.JButton" name="iconoAnadirImagen">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/gallery.png"/>
+          <Image iconType="3" name="/images/gallery.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="A&#xf1;adir imagen"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -452,7 +459,7 @@
     <Component class="javax.swing.JButton" name="iconoPresentacion">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/presentation.jpg"/>
+          <Image iconType="3" name="/images/presentation.jpg"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Presentacion"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -471,7 +478,7 @@
     <Component class="javax.swing.JButton" name="iconoAnadirCuadroTexto">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/anadirCuadrotextp.png"/>
+          <Image iconType="3" name="/images/anadirCuadrotextp.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="A&#xf1;adir cuadro de texto"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -532,10 +539,12 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="409" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
     </Container>
+    <Component class="java.awt.Scrollbar" name="scrollbar1">
+    </Component>
   </SubComponents>
 </Form>
