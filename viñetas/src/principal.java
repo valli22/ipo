@@ -88,7 +88,7 @@ public class principal extends javax.swing.JFrame {
 
         iconoNuevoProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main_New_Project.png"))); // NOI18N
         iconoNuevoProyecto.setToolTipText("Nuevo proyecto");
-        iconoNuevoProyecto.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        iconoNuevoProyecto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         iconoNuevoProyecto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         iconoNuevoProyecto.setFocusable(false);
         iconoNuevoProyecto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -96,7 +96,7 @@ public class principal extends javax.swing.JFrame {
 
         iconoGuardarProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/save the world.png"))); // NOI18N
         iconoGuardarProyecto.setToolTipText("Guardar proyecto");
-        iconoGuardarProyecto.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        iconoGuardarProyecto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         iconoGuardarProyecto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         iconoGuardarProyecto.setFocusable(false);
         iconoGuardarProyecto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -109,14 +109,16 @@ public class principal extends javax.swing.JFrame {
 
         iconoAnadirVideo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/video.jpg"))); // NOI18N
         iconoAnadirVideo.setToolTipText("Añadir video");
-        iconoAnadirVideo.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        iconoAnadirVideo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        iconoAnadirVideo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         iconoAnadirVideo.setFocusable(false);
         iconoAnadirVideo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         iconoAnadirVideo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         iconoAnadirImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gallery.png"))); // NOI18N
         iconoAnadirImagen.setToolTipText("Añadir imagen");
-        iconoAnadirImagen.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        iconoAnadirImagen.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        iconoAnadirImagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         iconoAnadirImagen.setFocusable(false);
         iconoAnadirImagen.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         iconoAnadirImagen.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -125,14 +127,16 @@ public class principal extends javax.swing.JFrame {
 
         iconoPresentacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentation.jpg"))); // NOI18N
         iconoPresentacion.setToolTipText("Presentacion");
-        iconoPresentacion.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        iconoPresentacion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        iconoPresentacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         iconoPresentacion.setFocusable(false);
         iconoPresentacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         iconoPresentacion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         iconoAnadirCuadroTexto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anadirCuadrotextp.png"))); // NOI18N
         iconoAnadirCuadroTexto.setToolTipText("Añadir cuadro de texto");
-        iconoAnadirCuadroTexto.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        iconoAnadirCuadroTexto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        iconoAnadirCuadroTexto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         iconoAnadirCuadroTexto.setFocusable(false);
         iconoAnadirCuadroTexto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         iconoAnadirCuadroTexto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -142,6 +146,7 @@ public class principal extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
+        listaVinetas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jScrollPane1.setViewportView(listaVinetas);
 
         jLabel1.setText("Seleccion de viñeta:");
@@ -249,6 +254,7 @@ public class principal extends javax.swing.JFrame {
 
         menuAyuda.setText("Ayuda");
 
+        ayudaAcercaDe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ayuda.png"))); // NOI18N
         ayudaAcercaDe.setText("Acerca de Viñetas.exe");
         menuAyuda.add(ayudaAcercaDe);
 
