@@ -243,8 +243,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jScrollPane1" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Component id="iconoNuevoProyecto" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="iconoGuardarProyecto" min="-2" max="-2" attributes="0"/>
@@ -252,13 +253,9 @@
                               <Component id="iconoAnadirVideo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="iconoAnadirImagen" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="iconoAnadirCuadroTexto" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="scrollbar1" min="-2" max="-2" attributes="0"/>
-                          <Component id="iconoAnadirCuadroTexto" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -314,7 +311,6 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="panelEdicion" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" pref="409" max="32767" attributes="0"/>
-                  <Component id="scrollbar1" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -544,7 +540,5 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Component class="java.awt.Scrollbar" name="scrollbar1">
-    </Component>
   </SubComponents>
 </Form>
