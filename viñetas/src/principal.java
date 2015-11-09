@@ -1,5 +1,7 @@
 
 import java.io.File;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -20,6 +22,10 @@ public class principal extends javax.swing.JFrame {
     /**
      * Creates new form principal
      */
+    DefaultListModel viñetas;
+    int i = 1;
+    
+    
     public principal() {
         initComponents();
     }
@@ -33,27 +39,18 @@ public class principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPopupMenu1 = new javax.swing.JPopupMenu();
-        jPopupMenu2 = new javax.swing.JPopupMenu();
-        jPopupMenu3 = new javax.swing.JPopupMenu();
-        jPopupMenu4 = new javax.swing.JPopupMenu();
-        jToolBar2 = new javax.swing.JToolBar();
-        jToolBar1 = new javax.swing.JToolBar();
-        jToolBar3 = new javax.swing.JToolBar();
-        jToolBar4 = new javax.swing.JToolBar();
-        jToolBar5 = new javax.swing.JToolBar();
-        jToolBar6 = new javax.swing.JToolBar();
         iconoNuevoProyecto = new javax.swing.JButton();
         iconoGuardarProyecto = new javax.swing.JButton();
         iconoAnadirVideo = new javax.swing.JButton();
         iconoAnadirImagen = new javax.swing.JButton();
-        jToolBar7 = new javax.swing.JToolBar();
         iconoPresentacion = new javax.swing.JButton();
         iconoAnadirCuadroTexto = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
+        vinetas = new DefaultListModel<>();
         listaVinetas = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
-        panelEdicion = new javax.swing.JPanel();
+        panelEditable = new javax.swing.JScrollPane();
+        jEditorPane1 = new javax.swing.JEditorPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuArchivo = new javax.swing.JMenu();
         archivoNuevo = new javax.swing.JMenuItem();
@@ -79,18 +76,6 @@ public class principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Viñetas");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jToolBar2.setRollover(true);
-
-        jToolBar1.setRollover(true);
-
-        jToolBar3.setRollover(true);
-
-        jToolBar4.setRollover(true);
-
-        jToolBar5.setRollover(true);
-
-        jToolBar6.setRollover(true);
 
         iconoNuevoProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Main_New_Project.png"))); // NOI18N
         iconoNuevoProyecto.setToolTipText("Nuevo proyecto");
@@ -139,8 +124,6 @@ public class principal extends javax.swing.JFrame {
             }
         });
 
-        jToolBar7.setRollover(true);
-
         iconoPresentacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/presentation.jpg"))); // NOI18N
         iconoPresentacion.setToolTipText("Presentacion");
         iconoPresentacion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -157,29 +140,14 @@ public class principal extends javax.swing.JFrame {
         iconoAnadirCuadroTexto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         iconoAnadirCuadroTexto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        listaVinetas.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
+        listaVinetas.setModel(vinetas);
         listaVinetas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jScrollPane1.setViewportView(listaVinetas);
 
         jLabel1.setText("Seleccion de viñeta:");
 
-        panelEdicion.setBackground(new java.awt.Color(255, 255, 255));
-        panelEdicion.setAutoscrolls(true);
-
-        javax.swing.GroupLayout panelEdicionLayout = new javax.swing.GroupLayout(panelEdicion);
-        panelEdicion.setLayout(panelEdicionLayout);
-        panelEdicionLayout.setHorizontalGroup(
-            panelEdicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 736, Short.MAX_VALUE)
-        );
-        panelEdicionLayout.setVerticalGroup(
-            panelEdicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 409, Short.MAX_VALUE)
-        );
+        jEditorPane1.setEditable(false);
+        panelEditable.setViewportView(jEditorPane1);
 
         menuArchivo.setText("Archivo");
 
@@ -229,6 +197,11 @@ public class principal extends javax.swing.JFrame {
 
         edicionInsertarInsertarV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/insert page.png"))); // NOI18N
         edicionInsertarInsertarV.setText("Insertar viñeta");
+        edicionInsertarInsertarV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edicionInsertarInsertarVActionPerformed(evt);
+            }
+        });
         edicionInsertar.add(edicionInsertarInsertarV);
 
         edicionInsertarImportarI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gallery.png"))); // NOI18N
@@ -308,8 +281,7 @@ public class principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(iconoNuevoProyecto)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -319,41 +291,21 @@ public class principal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(iconoAnadirImagen)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(iconoAnadirCuadroTexto)))
+                                .addComponent(iconoAnadirCuadroTexto))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(iconoPresentacion)
-                                .addGap(33, 33, 33)
-                                .addComponent(jToolBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(69, 69, 69)
-                                .addComponent(jToolBar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(69, 69, 69)
-                                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(56, 56, 56)
-                                .addComponent(jToolBar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(99, 99, 99)
-                                .addComponent(jToolBar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(91, 91, 91)
-                                .addComponent(jToolBar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(81, 81, 81)
-                                .addComponent(jToolBar6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(panelEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(panelEditable, javax.swing.GroupLayout.DEFAULT_SIZE, 1048, Short.MAX_VALUE)))
                     .addComponent(jLabel1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jToolBar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jToolBar6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jToolBar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jToolBar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jToolBar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jToolBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(iconoNuevoProyecto)
                     .addComponent(iconoGuardarProyecto)
                     .addComponent(iconoAnadirVideo)
@@ -364,19 +316,20 @@ public class principal extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelEdicion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelEditable)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE))
                 .addContainerGap())
         );
-
-        panelEdicion.getAccessibleContext().setAccessibleName("");
-        panelEdicion.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void archivoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoNuevoActionPerformed
-           
+        vinetas.removeAllElements();
+        i=1;
+        vinetas.addElement("Viñeta "+i);
+        i++;
+        listaVinetas.setSelectedIndex(0);
     }//GEN-LAST:event_archivoNuevoActionPerformed
 
     private void archivoGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoGuardarActionPerformed
@@ -412,7 +365,11 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_edicionInsertarImportarIActionPerformed
 
     private void iconoNuevoProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoNuevoProyectoActionPerformed
-     
+        vinetas.removeAllElements();
+        i=1;
+        vinetas.addElement("Viñeta "+i);
+        i++;
+        listaVinetas.setSelectedIndex(0);
     }//GEN-LAST:event_iconoNuevoProyectoActionPerformed
 
     private void iconoAnadirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirImagenActionPerformed
@@ -422,78 +379,22 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_iconoAnadirImagenActionPerformed
 
     private void edicionFormatoTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionFormatoTActionPerformed
-        Ventana opciones = new Ventana();
-        opciones.setSize(400,400);
-        opciones.setVisible(true);
+//        Ventana opciones = new Ventana();
+//        opciones.setSize(400,400);
+//        opciones.setVisible(true);
         
     }//GEN-LAST:event_edicionFormatoTActionPerformed
+
+    private void edicionInsertarInsertarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarInsertarVActionPerformed
+        vinetas.addElement("Viñeta "+i);
+        i++;
+        listaVinetas.setSelectedIndex(0);
+    }//GEN-LAST:event_edicionInsertarInsertarVActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    private class Ventana extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Ventana
-     */
-        public Ventana() {
-            initComponents();
-            colorChooser.getColor();
-            textSize.setValue(13);
-            textSize.getValue();
-        }
-
-        /**
-         * This method is called from within the constructor to initialize the form.
-         * WARNING: Do NOT modify this code. The content of this method is always
-         * regenerated by the Form Editor.
-         */
-        @SuppressWarnings("unchecked")
-        // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-        private void initComponents() {
-
-            jSpinner1 = new javax.swing.JSpinner();
-            jLabel1 = new javax.swing.JLabel();
-            textSize = new javax.swing.JSpinner();
-            colorChooser = new javax.swing.JColorChooser();
-
-            jLabel1.setText("Text size");
-
-            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-            this.setLayout(layout);
-            layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(18, 18, 18)
-                            .addComponent(textSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(colorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            );
-            layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(textSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(colorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            );
-        }// </editor-fold>                        
-
-
-        // Variables declaration - do not modify                     
-        private javax.swing.JColorChooser colorChooser;
-        private javax.swing.JLabel jLabel1;
-        private javax.swing.JSpinner jSpinner1;
-        private javax.swing.JSpinner textSize;
-        // End of variables declaration                   
-}
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -547,26 +448,17 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton iconoGuardarProyecto;
     private javax.swing.JButton iconoNuevoProyecto;
     private javax.swing.JButton iconoPresentacion;
+    private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JPopupMenu jPopupMenu2;
-    private javax.swing.JPopupMenu jPopupMenu3;
-    private javax.swing.JPopupMenu jPopupMenu4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JToolBar jToolBar2;
-    private javax.swing.JToolBar jToolBar3;
-    private javax.swing.JToolBar jToolBar4;
-    private javax.swing.JToolBar jToolBar5;
-    private javax.swing.JToolBar jToolBar6;
-    private javax.swing.JToolBar jToolBar7;
     private javax.swing.JList listaVinetas;
+    private DefaultListModel vinetas;
     private javax.swing.JMenu menuArchivo;
     private javax.swing.JMenu menuAyuda;
     private javax.swing.JMenu menuEdicion;
     private javax.swing.JMenu menuPresentacion;
-    private javax.swing.JPanel panelEdicion;
+    private javax.swing.JScrollPane panelEditable;
     private javax.swing.JMenuItem presentacionPresentacionV;
     private javax.swing.JMenuItem presentacionVistaPrevia;
     // End of variables declaration//GEN-END:variables
