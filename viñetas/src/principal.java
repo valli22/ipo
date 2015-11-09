@@ -1,3 +1,7 @@
+
+import java.io.File;
+import javax.swing.JFileChooser;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -93,6 +97,11 @@ public class principal extends javax.swing.JFrame {
         iconoNuevoProyecto.setFocusable(false);
         iconoNuevoProyecto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         iconoNuevoProyecto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        iconoNuevoProyecto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iconoNuevoProyectoActionPerformed(evt);
+            }
+        });
 
         iconoGuardarProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/save the world.png"))); // NOI18N
         iconoGuardarProyecto.setToolTipText("Guardar proyecto");
@@ -122,6 +131,11 @@ public class principal extends javax.swing.JFrame {
         iconoAnadirImagen.setFocusable(false);
         iconoAnadirImagen.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         iconoAnadirImagen.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        iconoAnadirImagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iconoAnadirImagenActionPerformed(evt);
+            }
+        });
 
         jToolBar7.setRollover(true);
 
@@ -166,7 +180,8 @@ public class principal extends javax.swing.JFrame {
 
         menuArchivo.setText("Archivo");
 
-        archivoNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main_New_Project.png"))); // NOI18N
+        archivoNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main_New_Project.png")));
+
         archivoNuevo.setText("Nuevo proyecto");
         archivoNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +192,11 @@ public class principal extends javax.swing.JFrame {
 
         archivoAbrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abrir.png"))); // NOI18N
         archivoAbrir.setText("Abrir proyecto");
+        archivoAbrir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                archivoAbrirActionPerformed(evt);
+            }
+        });
         menuArchivo.add(archivoAbrir);
 
         archivoGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/save the world.png"))); // NOI18N
@@ -190,6 +210,11 @@ public class principal extends javax.swing.JFrame {
 
         archivoSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit.png"))); // NOI18N
         archivoSalir.setText("Salir del programa");
+        archivoSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                archivoSalirActionPerformed(evt);
+            }
+        });
         menuArchivo.add(archivoSalir);
 
         jMenuBar1.add(menuArchivo);
@@ -205,6 +230,11 @@ public class principal extends javax.swing.JFrame {
 
         edicionInsertarImportarI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gallery.png"))); // NOI18N
         edicionInsertarImportarI.setText("Importar Imagen");
+        edicionInsertarImportarI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edicionInsertarImportarIActionPerformed(evt);
+            }
+        });
         edicionInsertar.add(edicionInsertarImportarI);
 
         edicionInsertarAnadirVid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/video.jpg"))); // NOI18N
@@ -335,11 +365,13 @@ public class principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void archivoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoNuevoActionPerformed
-        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(this);        
     }//GEN-LAST:event_archivoNuevoActionPerformed
 
     private void archivoGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoGuardarActionPerformed
-        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(this); 
     }//GEN-LAST:event_archivoGuardarActionPerformed
 
     private void presentacionVistaPreviaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presentacionVistaPreviaActionPerformed
@@ -347,8 +379,33 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_presentacionVistaPreviaActionPerformed
 
     private void iconoGuardarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoGuardarProyectoActionPerformed
-        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(this);
     }//GEN-LAST:event_iconoGuardarProyectoActionPerformed
+
+    private void archivoSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_archivoSalirActionPerformed
+
+    private void archivoAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoAbrirActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(this);   
+    }//GEN-LAST:event_archivoAbrirActionPerformed
+
+    private void edicionInsertarImportarIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarImportarIActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(this);
+    }//GEN-LAST:event_edicionInsertarImportarIActionPerformed
+
+    private void iconoNuevoProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoNuevoProyectoActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(this);
+    }//GEN-LAST:event_iconoNuevoProyectoActionPerformed
+
+    private void iconoAnadirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirImagenActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(this);
+    }//GEN-LAST:event_iconoAnadirImagenActionPerformed
 
     /**
      * @param args the command line arguments
