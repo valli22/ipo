@@ -1,14 +1,21 @@
 
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javafx.scene.media.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -28,6 +35,7 @@ public class principal extends javax.swing.JFrame {
      */
     DefaultListModel viñetas;
     int i = 0;
+    
     
 
     public principal() {
@@ -236,6 +244,11 @@ public class principal extends javax.swing.JFrame {
 
         edicionInsertarAnadirVid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/video.jpg"))); // NOI18N
         edicionInsertarAnadirVid.setText("Añadir video");
+        edicionInsertarAnadirVid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edicionInsertarAnadirVidActionPerformed(evt);
+            }
+        });
         edicionInsertar.add(edicionInsertarAnadirVid);
 
         edicionInsertarAnadirIP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/imagen predefinida.jpg"))); // NOI18N
@@ -471,6 +484,16 @@ public class principal extends javax.swing.JFrame {
         dialogo.add(panel);
         dialogo.setVisible(true);
     }//GEN-LAST:event_iconoPresentacionActionPerformed
+
+    private void edicionInsertarAnadirVidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirVidActionPerformed
+        URLabel url = new URLabel();
+        url.setURL("https://www.youtube.com/watch?v=wAD_sAynOQk");
+//        url.setText("Video");
+        url.setLocation(750,50);
+        url.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jEditorPane1.add(url);
+        jEditorPane1.repaint();
+    }//GEN-LAST:event_edicionInsertarAnadirVidActionPerformed
 
     /**
      * @param args the command line arguments
