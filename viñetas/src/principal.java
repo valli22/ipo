@@ -2,29 +2,12 @@
 
 
 import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Dimension;
 import java.awt.Frame;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javafx.scene.media.*;
-import javax.swing.Icon;
-import javax.swing.JEditorPane;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -424,7 +407,10 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_archivoGuardarActionPerformed
 
     private void presentacionVistaPreviaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presentacionVistaPreviaActionPerformed
-        // TODO add your handling code here:
+        VistaPrevia vista = new VistaPrevia();
+        vista.setVisible(true);
+        vista.repaint();
+        vista.getContentPane().setVisible(true);
     }//GEN-LAST:event_presentacionVistaPreviaActionPerformed
 
     private void iconoGuardarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoGuardarProyectoActionPerformed
@@ -521,6 +507,7 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_edicionInsertarAnadirVidActionPerformed
 
     private void edicionInsertarAnadirAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirAActionPerformed
+
         if(i==1){
             if (i2 == 0) {
                 JLabel etiqueta = new JLabel();
@@ -548,6 +535,7 @@ public class principal extends javax.swing.JFrame {
             }
         }else {
             javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
+
         }
     }//GEN-LAST:event_edicionInsertarAnadirAActionPerformed
 
