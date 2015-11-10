@@ -1,6 +1,8 @@
 
+import java.awt.Color;
 import static java.lang.Integer.parseInt;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,6 +21,8 @@ public class vinetaEliminar extends javax.swing.JFrame {
      */
     public vinetaEliminar() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
+        this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
     }
 
     /**

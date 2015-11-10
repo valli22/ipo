@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -20,6 +21,8 @@ public class AñadirVideoPredef extends javax.swing.JFrame {
      */
     public AñadirVideoPredef() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
+        this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
     }
          
     /**

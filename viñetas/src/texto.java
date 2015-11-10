@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +19,8 @@ public class texto extends javax.swing.JFrame {
      */
     public texto() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
+        this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
     }
 
     /**

@@ -225,6 +225,9 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" value="Vi&#xf1;etas"/>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="ff" red="99" type="rgb"/>
+    </Property>
     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
       <Color id="Cursor Por defecto"/>
     </Property>
@@ -273,7 +276,7 @@
                               <Component id="iconoPresentacion" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="panelEditable" pref="1048" max="32767" attributes="0"/>
+                          <Component id="panelEditable" pref="1050" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -298,7 +301,7 @@
               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="panelEditable" max="32767" attributes="0"/>
-                  <Component id="jScrollPane1" pref="409" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="412" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>

@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
@@ -53,6 +54,8 @@ public class ImagenPredef extends javax.swing.JFrame {
     }
     public ImagenPredef() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
+        this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
     }
 
     /**

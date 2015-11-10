@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Frame;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 
@@ -25,6 +26,8 @@ public class Ventana extends javax.swing.JFrame {
     public Ventana() {
         initComponents();
         textSize.setValue(12);
+        setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
+        this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
     }
     
     public int getValue(){

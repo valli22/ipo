@@ -1,10 +1,12 @@
 
 
 
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -21,6 +23,8 @@ import javafx.scene.media.*;
 import javax.swing.Icon;
 import javax.swing.JEditorPane;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -50,6 +54,8 @@ public class principal extends javax.swing.JFrame {
 
     public principal() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
+        this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
     }
 
     /**
@@ -109,6 +115,7 @@ public class principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Viñetas");
+        setBackground(new java.awt.Color(153, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         iconoNuevoProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Main_New_Project.png"))); // NOI18N
@@ -377,7 +384,7 @@ public class principal extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(iconoPresentacion)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(panelEditable, javax.swing.GroupLayout.DEFAULT_SIZE, 1048, Short.MAX_VALUE)))
+                            .addComponent(panelEditable, javax.swing.GroupLayout.DEFAULT_SIZE, 1050, Short.MAX_VALUE)))
                     .addComponent(jLabel1))
                 .addContainerGap())
         );
@@ -396,7 +403,7 @@ public class principal extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelEditable)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
