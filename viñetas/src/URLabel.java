@@ -42,7 +42,7 @@ public class URLabel extends JLabel implements MouseListener {
         this.addMouseListener(this);
         ImgMenos = new ImageIcon(getClass().getResource("/images/pregunta.jpg"));
         this.setIcon(ImgMenos);
-        this.setSize(200,200);
+        this.setSize(200,266);
         this.setVisible(true);
         
 

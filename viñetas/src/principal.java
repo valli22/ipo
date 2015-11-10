@@ -16,6 +16,8 @@ import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javafx.scene.media.*;
+import javax.swing.Icon;
+import javax.swing.JLabel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -35,6 +37,7 @@ public class principal extends javax.swing.JFrame {
      */
     DefaultListModel viñetas;
     int i = 0;
+    int i2 = 0;
     
     
 
@@ -134,6 +137,11 @@ public class principal extends javax.swing.JFrame {
         iconoAnadirVideo.setFocusable(false);
         iconoAnadirVideo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         iconoAnadirVideo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        iconoAnadirVideo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iconoAnadirVideoActionPerformed(evt);
+            }
+        });
 
         iconoAnadirImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gallery.png"))); // NOI18N
         iconoAnadirImagen.setToolTipText("Añadir imagen");
@@ -262,6 +270,11 @@ public class principal extends javax.swing.JFrame {
 
         edicionInsertarAnadirA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/animacion.jpg"))); // NOI18N
         edicionInsertarAnadirA.setText("Añadir animacion");
+        edicionInsertarAnadirA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edicionInsertarAnadirAActionPerformed(evt);
+            }
+        });
         edicionInsertar.add(edicionInsertarAnadirA);
 
         menuEdicion.add(edicionInsertar);
@@ -494,6 +507,43 @@ public class principal extends javax.swing.JFrame {
         jEditorPane1.add(url);
         jEditorPane1.repaint();
     }//GEN-LAST:event_edicionInsertarAnadirVidActionPerformed
+
+    private void edicionInsertarAnadirAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirAActionPerformed
+        if (i2 == 0) {
+            JLabel etiqueta = new JLabel();
+            ImageIcon imageIcon = new ImageIcon(getClass().getResource("/images/numerogif.gif"));
+            etiqueta.setIcon(imageIcon);
+            imageIcon.setImageObserver(etiqueta);
+            etiqueta.setText("");
+            etiqueta.setLocation(550, 250);
+            etiqueta.setSize(207,165);
+            etiqueta.setVisible(true);
+            jEditorPane1.add(etiqueta);
+            jEditorPane1.repaint();
+            i2++;
+        } else {
+            JLabel etiqueta = new JLabel();
+            ImageIcon imageIcon = new ImageIcon(getClass().getResource("/images/duke-v4.gif"));
+            etiqueta.setIcon(imageIcon);
+            imageIcon.setImageObserver(etiqueta);
+            etiqueta.setText("");
+            etiqueta.setLocation(950, 400);
+            etiqueta.setSize(226,242);
+            etiqueta.setVisible(true);
+            jEditorPane1.add(etiqueta);
+            jEditorPane1.repaint();
+        }
+    }//GEN-LAST:event_edicionInsertarAnadirAActionPerformed
+
+    private void iconoAnadirVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirVideoActionPerformed
+        URLabel url = new URLabel();
+        url.setURL("https://www.youtube.com/watch?v=wAD_sAynOQk");
+//        url.setText("Video");
+        url.setLocation(750,50);
+        url.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jEditorPane1.add(url);
+        jEditorPane1.repaint();
+    }//GEN-LAST:event_iconoAnadirVideoActionPerformed
 
     /**
      * @param args the command line arguments
