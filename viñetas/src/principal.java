@@ -147,6 +147,11 @@ public class principal extends javax.swing.JFrame {
         iconoPresentacion.setFocusable(false);
         iconoPresentacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         iconoPresentacion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        iconoPresentacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iconoPresentacionActionPerformed(evt);
+            }
+        });
 
         iconoAnadirCuadroTexto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/anadirCuadrotextp.png"))); // NOI18N
         iconoAnadirCuadroTexto.setToolTipText("Añadir cuadro de texto");
@@ -413,30 +418,24 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_iconoAnadirImagenActionPerformed
 
     private void edicionFormatoTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionFormatoTActionPerformed
-//        Ventana opciones = new Ventana();
-//        opciones.setSize(400,400);
-//        opciones.setVisible(true);
-        
+        Ventana opciones = new Ventana();
+        opciones.setVisible(true);
     }//GEN-LAST:event_edicionFormatoTActionPerformed
 
     private void edicionInsertarInsertarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarInsertarVActionPerformed
-        if(i>=1){
             i++;
             vinetas.addElement("Viñeta "+i);
             listaVinetas.setSelectedIndex(0);
-        }else {
-            javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
-        }
     }//GEN-LAST:event_edicionInsertarInsertarVActionPerformed
 
     private void edicionInsertarAnadirIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirIPActionPerformed
         if(i>=1){
-        Frame principal = null;
-        JDialog dialogo = new JDialog(principal,"Elije imagen");
-        anadirImgPredef panel = new anadirImgPredef();
-        dialogo.setSize(600, 600);
-        dialogo.add(panel);
-        dialogo.setVisible(true);
+            Frame principal = null;
+            JDialog dialogo = new JDialog(principal,"Elije imagen");
+            anadirImgPredef panel = new anadirImgPredef();
+            dialogo.setSize(600, 600);
+            dialogo.add(panel);
+            dialogo.setVisible(true);
         }else {
             javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
         }
@@ -463,6 +462,15 @@ public class principal extends javax.swing.JFrame {
         dialogo.add(panel);
         dialogo.setVisible(true);
     }//GEN-LAST:event_ayudaAcercaDeActionPerformed
+
+    private void iconoPresentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoPresentacionActionPerformed
+        Frame principal = null;
+        JDialog dialogo = new JDialog(principal,"Presentacion");
+        presentacion panel = new presentacion();
+        dialogo.setSize(1500, 1000);
+        dialogo.add(panel);
+        dialogo.setVisible(true);
+    }//GEN-LAST:event_iconoPresentacionActionPerformed
 
     /**
      * @param args the command line arguments
