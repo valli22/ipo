@@ -456,12 +456,7 @@ public class principal extends javax.swing.JFrame {
 
     private void edicionInsertarAnadirIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirIPActionPerformed
         if(i>=1){
-            Frame principal = null;
-            JDialog dialogo = new JDialog(principal,"Elije imagen");
-            anadirImgPredef panel = new anadirImgPredef();
-            dialogo.setSize(600, 600);
-            dialogo.add(panel);
-            dialogo.setVisible(true);
+            new ImagenPredef().setVisible(true);
         }else {
             javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
         }
@@ -499,50 +494,50 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_iconoPresentacionActionPerformed
 
     private void edicionInsertarAnadirVidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirVidActionPerformed
-        URLabel url = new URLabel();
-        url.setURL("https://www.youtube.com/watch?v=wAD_sAynOQk");
-//        url.setText("Video");
-        url.setLocation(750,50);
-        url.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        jEditorPane1.add(url);
-        jEditorPane1.repaint();
+        if(i==1){
+        new AñadirVideoPredef().setVisible(true);
+        }else {
+            javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
+        }
     }//GEN-LAST:event_edicionInsertarAnadirVidActionPerformed
 
     private void edicionInsertarAnadirAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirAActionPerformed
-        if (i2 == 0) {
-            JLabel etiqueta = new JLabel();
-            ImageIcon imageIcon = new ImageIcon(getClass().getResource("/images/numerogif.gif"));
-            etiqueta.setIcon(imageIcon);
-            imageIcon.setImageObserver(etiqueta);
-            etiqueta.setText("");
-            etiqueta.setLocation(550, 250);
-            etiqueta.setSize(207,165);
-            etiqueta.setVisible(true);
-            jEditorPane1.add(etiqueta);
-            jEditorPane1.repaint();
-            i2++;
-        } else {
-            JLabel etiqueta = new JLabel();
-            ImageIcon imageIcon = new ImageIcon(getClass().getResource("/images/duke-v4.gif"));
-            etiqueta.setIcon(imageIcon);
-            imageIcon.setImageObserver(etiqueta);
-            etiqueta.setText("");
-            etiqueta.setLocation(950, 400);
-            etiqueta.setSize(226,242);
-            etiqueta.setVisible(true);
-            jEditorPane1.add(etiqueta);
-            jEditorPane1.repaint();
+        if(i==1){
+            if (i2 == 0) {
+                JLabel etiqueta = new JLabel();
+                ImageIcon imageIcon = new ImageIcon(getClass().getResource("/images/numerogif.gif"));
+                etiqueta.setIcon(imageIcon);
+                imageIcon.setImageObserver(etiqueta);
+                etiqueta.setText("");
+                etiqueta.setLocation(550, 250);
+                etiqueta.setSize(207,165);
+                etiqueta.setVisible(true);
+                jEditorPane1.add(etiqueta);
+                jEditorPane1.repaint();
+                i2++;
+            } else {
+                JLabel etiqueta = new JLabel();
+                ImageIcon imageIcon = new ImageIcon(getClass().getResource("/images/duke-v4.gif"));
+                etiqueta.setIcon(imageIcon);
+                imageIcon.setImageObserver(etiqueta);
+                etiqueta.setText("");
+                etiqueta.setLocation(950, 400);
+                etiqueta.setSize(226,242);
+                etiqueta.setVisible(true);
+                jEditorPane1.add(etiqueta);
+                jEditorPane1.repaint();
+            }
+        }else {
+            javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
         }
     }//GEN-LAST:event_edicionInsertarAnadirAActionPerformed
 
     private void iconoAnadirVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirVideoActionPerformed
-        URLabel url = new URLabel();
-        url.setURL("https://www.youtube.com/watch?v=wAD_sAynOQk");
-//        url.setText("Video");
-        url.setLocation(750,50);
-        url.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        jEditorPane1.add(url);
-        jEditorPane1.repaint();
+        if (i==1){
+        new AñadirVideoPredef().setVisible(true);
+        }else {
+            javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
+        }
     }//GEN-LAST:event_iconoAnadirVideoActionPerformed
 
     /**

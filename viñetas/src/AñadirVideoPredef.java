@@ -1,4 +1,5 @@
 
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
@@ -20,43 +21,7 @@ public class AñadirVideoPredef extends javax.swing.JFrame {
     public AñadirVideoPredef() {
         initComponents();
     }
-    public class Imagen extends javax.swing.JPanel {
- 
-        int a;
-        public Imagen(int a) {
-            this.setSize(1000, 1000); //se selecciona el tamaño del panel
-            this.a=a;
-        }
-
-        //Se crea un método cuyo parámetro debe ser un objeto Graphics
-
-        public void paint(Graphics grafico) {
-            Dimension height = getSize();
-
-            //Se selecciona la imagen que tenemos en el paquete de la //ruta del programa
-            if (a==1){
-                ImageIcon ImgUno = new ImageIcon(getClass().getResource("/images/uno_animado.jpg"));
-                grafico.drawImage(ImgUno.getImage(), 0, 50, 200, 200, null);
-            }else if(a==2){
-                ImageIcon ImgMenos = new ImageIcon(getClass().getResource("/images/menos.jpg"));
-                grafico.drawImage(ImgMenos.getImage(), 150, 50, 200, 200, null);
-            }else if(a==3){
-                ImageIcon ImgMenos = new ImageIcon(getClass().getResource("/images/dos.jpg"));
-                grafico.drawImage(ImgMenos.getImage(), 350, 50, 200, 200, null);
-            }else if(a==4){
-                ImageIcon ImgMenos = new ImageIcon(getClass().getResource("/images/igual.png"));
-                grafico.drawImage(ImgMenos.getImage(), 550, 50, 200, 200, null);
-            }
-            //se dibuja la imagen que tenemos en el paquete Images //dentro de un panel
-
-
-
-
-            setOpaque(false);
-            super.paintComponent(grafico);
-        }
-    }
-
+         
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,49 +38,108 @@ public class AñadirVideoPredef extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pregunta.jpg"))); // NOI18N
-        jButton1.setText("jButton1");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/preguntaicono.jpg"))); // NOI18N
         jButton1.setMaximumSize(new java.awt.Dimension(300, 500));
         jButton1.setMinimumSize(new java.awt.Dimension(300, 500));
         jButton1.setPreferredSize(new java.awt.Dimension(200, 400));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/holaicono.jpg"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("jButton3");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/naranjaicono.jpg"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("jButton4");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ranaicono.jpg"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton3)
+                    .addComponent(jButton4))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        URLabel url = new URLabel();
+        url.setURL("https://www.youtube.com/watch?v=pvvbSzXUT4c");
+        url.setLocation(750,50);
+        url.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        principal.jEditorPane1.add(url);
+        principal.jEditorPane1.repaint();
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        URLabel url = new URLabel();
+        url.setURL("https://www.youtube.com/watch?v=pvvbSzXUT4c");
+        url.setLocation(750,50);
+        url.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        principal.jEditorPane1.add(url);
+        principal.jEditorPane1.repaint();
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        URLabel url = new URLabel();
+        url.setURL("https://www.youtube.com/watch?v=pvvbSzXUT4c");
+        url.setLocation(750,50);
+        url.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        principal.jEditorPane1.add(url);
+        principal.jEditorPane1.repaint();
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        URLabel url = new URLabel();
+        url.setURL("https://www.youtube.com/watch?v=pvvbSzXUT4c");
+        url.setLocation(750,50);
+        url.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        principal.jEditorPane1.add(url);
+        principal.jEditorPane1.repaint();
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
