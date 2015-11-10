@@ -183,6 +183,11 @@ public class principal extends javax.swing.JFrame {
         iconoAnadirCuadroTexto.setFocusable(false);
         iconoAnadirCuadroTexto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         iconoAnadirCuadroTexto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        iconoAnadirCuadroTexto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iconoAnadirCuadroTextoActionPerformed(evt);
+            }
+        });
 
         listaVinetas.setModel(vinetas);
         listaVinetas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -546,6 +551,10 @@ public class principal extends javax.swing.JFrame {
             javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
         }
     }//GEN-LAST:event_iconoAnadirVideoActionPerformed
+
+    private void iconoAnadirCuadroTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirCuadroTextoActionPerformed
+        new texto().setVisible(true);
+    }//GEN-LAST:event_iconoAnadirCuadroTextoActionPerformed
 
     /**
      * @param args the command line arguments
