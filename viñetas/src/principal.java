@@ -27,6 +27,7 @@ public class principal extends javax.swing.JFrame {
      */
 
     int i = 0;
+    int capacity=0;
     int i2 = 0;
     static int vinetaEliminada=-1;
 
@@ -396,6 +397,7 @@ public class principal extends javax.swing.JFrame {
     private void archivoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoNuevoActionPerformed
         vinetas.removeAllElements();
         i=1;
+        capacity=1;
         vinetas.addElement("Viñeta "+i);
         listaVinetas.setSelectedIndex(0);
     }//GEN-LAST:event_archivoNuevoActionPerformed
@@ -438,6 +440,7 @@ public class principal extends javax.swing.JFrame {
     private void iconoNuevoProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoNuevoProyectoActionPerformed
        vinetas.removeAllElements();
         i=1;
+        capacity=1;
         vinetas.addElement("Viñeta "+i);
         listaVinetas.setSelectedIndex(0);
     }//GEN-LAST:event_iconoNuevoProyectoActionPerformed
@@ -455,12 +458,13 @@ public class principal extends javax.swing.JFrame {
 
     private void edicionInsertarInsertarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarInsertarVActionPerformed
             i++;
+            capacity+=1;
             vinetas.addElement("Viñeta "+i);
             listaVinetas.setSelectedIndex(0);
     }//GEN-LAST:event_edicionInsertarInsertarVActionPerformed
 
     private void edicionInsertarAnadirIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirIPActionPerformed
-        if(i>=1){
+        if(capacity>=1){
             new ImagenPredef().setVisible(true);
         }else {
             javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
@@ -468,7 +472,8 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_edicionInsertarAnadirIPActionPerformed
 
     private void edicionEliminarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionEliminarVActionPerformed
-            new vinetaEliminar().setVisible(true);              
+            new vinetaEliminar().setVisible(true);
+            capacity-=1;
     }//GEN-LAST:event_edicionEliminarVActionPerformed
 
     private void presentacionPresentacionVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presentacionPresentacionVActionPerformed
@@ -499,7 +504,7 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_iconoPresentacionActionPerformed
 
     private void edicionInsertarAnadirVidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirVidActionPerformed
-        if(i==1){
+        if(capacity>=1){
         new AñadirVideoPredef().setVisible(true);
         }else {
             javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
@@ -508,7 +513,7 @@ public class principal extends javax.swing.JFrame {
 
     private void edicionInsertarAnadirAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirAActionPerformed
 
-        if(i==1){
+        if(capacity>=1){
             if (i2 == 0) {
                 JLabel etiqueta = new JLabel();
                 ImageIcon imageIcon = new ImageIcon(getClass().getResource("/images/numerogif.gif"));
@@ -540,7 +545,7 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_edicionInsertarAnadirAActionPerformed
 
     private void iconoAnadirVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirVideoActionPerformed
-        if (i==1){
+        if (capacity>=1){
         new AñadirVideoPredef().setVisible(true);
         }else {
             javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
@@ -548,7 +553,11 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_iconoAnadirVideoActionPerformed
 
     private void iconoAnadirCuadroTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirCuadroTextoActionPerformed
+        if (capacity>=1){
         new texto().setVisible(true);
+        }else {
+            javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
+        }
     }//GEN-LAST:event_iconoAnadirCuadroTextoActionPerformed
 
     /**

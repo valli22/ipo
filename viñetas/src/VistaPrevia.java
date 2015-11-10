@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,6 +18,8 @@ public class VistaPrevia extends javax.swing.JFrame {
      */
     public VistaPrevia() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
+        this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
         for (int i = 0; i< 3; i++){
             for (int j = 0; j<3; j++){
                 VistaPreviaPanel vista = new VistaPreviaPanel();
