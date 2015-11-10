@@ -405,7 +405,10 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_archivoGuardarActionPerformed
 
     private void presentacionVistaPreviaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presentacionVistaPreviaActionPerformed
-        // TODO add your handling code here:
+        VistaPrevia vista = new VistaPrevia();
+        vista.setVisible(true);
+        vista.repaint();
+        vista.getContentPane().setVisible(true);
     }//GEN-LAST:event_presentacionVistaPreviaActionPerformed
 
     private void iconoGuardarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoGuardarProyectoActionPerformed
@@ -518,8 +521,7 @@ public class principal extends javax.swing.JFrame {
             etiqueta.setLocation(550, 250);
             etiqueta.setSize(207,165);
             etiqueta.setVisible(true);
-            jEditorPane1.add(etiqueta);
-            jEditorPane1.repaint();
+            jEditorPane1.add(etiqueta);            jEditorPane1.repaint();
             i2++;
         } else {
             JLabel etiqueta = new JLabel();
