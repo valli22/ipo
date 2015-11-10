@@ -451,7 +451,7 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JList()"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="vinetas = new DefaultListModel&lt;&gt;();"/>
-            <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="private DefaultListModel vinetas;"/>
+            <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="static private DefaultListModel vinetas;"/>
             <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="listaVinetas.setModel(vinetas);"/>
           </AuxValues>
         </Component>

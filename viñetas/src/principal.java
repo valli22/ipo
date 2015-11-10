@@ -1,4 +1,6 @@
 
+
+
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Frame;
@@ -17,6 +19,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javafx.scene.media.*;
 import javax.swing.Icon;
+import javax.swing.JEditorPane;
 import javax.swing.JLabel;
 
 /*
@@ -35,11 +38,15 @@ public class principal extends javax.swing.JFrame {
     /**
      * Creates new form principal
      */
-    DefaultListModel viñetas;
+
     int i = 0;
     int i2 = 0;
-    
-    
+    static int vinetaEliminada=-1;
+
+    public static DefaultListModel getVinetas() {
+        return vinetas;
+    }
+
 
     public principal() {
         initComponents();
@@ -431,7 +438,7 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_edicionInsertarImportarIActionPerformed
 
     private void iconoNuevoProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoNuevoProyectoActionPerformed
-        vinetas.removeAllElements();
+       vinetas.removeAllElements();
         i=1;
         vinetas.addElement("Viñeta "+i);
         listaVinetas.setSelectedIndex(0);
@@ -463,7 +470,7 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_edicionInsertarAnadirIPActionPerformed
 
     private void edicionEliminarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionEliminarVActionPerformed
-        
+            new vinetaEliminar().setVisible(true);              
     }//GEN-LAST:event_edicionEliminarVActionPerformed
 
     private void presentacionPresentacionVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presentacionPresentacionVActionPerformed
@@ -603,7 +610,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList listaVinetas;
-    private DefaultListModel vinetas;
+    static private DefaultListModel vinetas;
     private javax.swing.JMenu menuArchivo;
     private javax.swing.JMenu menuAyuda;
     private javax.swing.JMenu menuEdicion;
