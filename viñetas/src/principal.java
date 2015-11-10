@@ -8,6 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -98,7 +99,7 @@ public class principal extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Viñetas");
+        setTitle("Viñetas v-1.0.3");
         setBackground(new java.awt.Color(153, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -302,6 +303,11 @@ public class principal extends javax.swing.JFrame {
 
         edicionAnadirCT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/anadirCuadrotextp.png"))); // NOI18N
         edicionAnadirCT.setText("Añadir cuadro de texto");
+        edicionAnadirCT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edicionAnadirCTActionPerformed(evt);
+            }
+        });
         menuEdicion.add(edicionAnadirCT);
 
         jMenuBar1.add(menuEdicion);
@@ -400,10 +406,14 @@ public class principal extends javax.swing.JFrame {
         capacity=1;
         vinetas.addElement("Viñeta "+i);
         listaVinetas.setSelectedIndex(0);
+        jEditorPane1.removeAll();
+        panelEditable.setViewportView(jEditorPane1);
     }//GEN-LAST:event_archivoNuevoActionPerformed
 
     private void archivoGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoGuardarActionPerformed
         JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("IPO","ipo");
+        chooser.setFileFilter(filtroImagen);
         chooser.setDialogTitle("Guardar proyecto");
         chooser.showOpenDialog(this); 
     }//GEN-LAST:event_archivoGuardarActionPerformed
@@ -417,6 +427,8 @@ public class principal extends javax.swing.JFrame {
 
     private void iconoGuardarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoGuardarProyectoActionPerformed
         JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("IPO","ipo");
+        chooser.setFileFilter(filtroImagen);
         chooser.setDialogTitle("Guardar proyecto");
         chooser.showOpenDialog(this);
     }//GEN-LAST:event_iconoGuardarProyectoActionPerformed
@@ -427,12 +439,16 @@ public class principal extends javax.swing.JFrame {
 
     private void archivoAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoAbrirActionPerformed
         JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("IPO","ipo");
+        chooser.setFileFilter(filtroImagen);
         chooser.setDialogTitle("Abrir proyecto");
         chooser.showOpenDialog(this);   
     }//GEN-LAST:event_archivoAbrirActionPerformed
 
     private void edicionInsertarImportarIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarImportarIActionPerformed
         JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("JPG, PNG & GIF","jpg","png","gif");
+        chooser.setFileFilter(filtroImagen);
         chooser.setDialogTitle("Importar imagen");
         chooser.showOpenDialog(this);
     }//GEN-LAST:event_edicionInsertarImportarIActionPerformed
@@ -443,10 +459,14 @@ public class principal extends javax.swing.JFrame {
         capacity=1;
         vinetas.addElement("Viñeta "+i);
         listaVinetas.setSelectedIndex(0);
+        jEditorPane1.removeAll();
+        panelEditable.setViewportView(jEditorPane1);
     }//GEN-LAST:event_iconoNuevoProyectoActionPerformed
 
     private void iconoAnadirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirImagenActionPerformed
         JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("JPG, PNG & GIF","jpg","png","gif");
+        chooser.setFileFilter(filtroImagen);
         chooser.setDialogTitle("Importar imagen");
         chooser.showOpenDialog(this);
     }//GEN-LAST:event_iconoAnadirImagenActionPerformed
@@ -554,11 +574,19 @@ public class principal extends javax.swing.JFrame {
 
     private void iconoAnadirCuadroTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirCuadroTextoActionPerformed
         if (capacity>=1){
-        new texto().setVisible(true);
+            new texto().setVisible(true);
         }else {
             javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
         }
     }//GEN-LAST:event_iconoAnadirCuadroTextoActionPerformed
+
+    private void edicionAnadirCTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionAnadirCTActionPerformed
+        if (capacity>=1){
+            new texto().setVisible(true);
+        }else {
+            javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
+        }
+    }//GEN-LAST:event_edicionAnadirCTActionPerformed
 
     /**
      * @param args the command line arguments

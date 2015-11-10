@@ -41,7 +41,7 @@ public class ayuda extends javax.swing.JPanel {
 
         jLabel4.setText("trabajar con esta herramienta.");
 
-        jLabel5.setText("Version -1.0.1");
+        jLabel5.setText("Version -1.0.3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
