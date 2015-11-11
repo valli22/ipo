@@ -602,7 +602,7 @@ public class principal extends javax.swing.JFrame {
                 etiqueta.setIcon(imageIcon);
                 imageIcon.setImageObserver(etiqueta);
                 etiqueta.setText("");
-                etiqueta.setLocation(550, 250);
+                etiqueta.setLocation(550, 220);
                 etiqueta.setSize(207,165);
                 etiqueta.setVisible(true);
                 currentPane.add(etiqueta);
