@@ -3,9 +3,11 @@
 
 import java.awt.Color;
 import java.awt.Frame;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
+import javax.swing.JEditorPane;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -27,6 +29,7 @@ public class principal extends javax.swing.JFrame {
      * Creates new form principal
      */
 
+    ArrayList<JEditorPane> panes = new ArrayList<>();
     int i = 0;
     int capacity=0;
     int i2 = 0;
@@ -183,6 +186,11 @@ public class principal extends javax.swing.JFrame {
 
         listaVinetas.setModel(vinetas);
         listaVinetas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        listaVinetas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVinetasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(listaVinetas);
 
         jLabel1.setText("Seleccion de viñeta:");
@@ -406,8 +414,10 @@ public class principal extends javax.swing.JFrame {
         capacity=1;
         vinetas.addElement("Viñeta "+i);
         listaVinetas.setSelectedIndex(0);
+        panes = new ArrayList<JEditorPane>();
         jEditorPane1.removeAll();
         panelEditable.setViewportView(jEditorPane1);
+        panes.add(jEditorPane1);
     }//GEN-LAST:event_archivoNuevoActionPerformed
 
     private void archivoGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoGuardarActionPerformed
@@ -459,8 +469,10 @@ public class principal extends javax.swing.JFrame {
         capacity=1;
         vinetas.addElement("Viñeta "+i);
         listaVinetas.setSelectedIndex(0);
+        panes = new ArrayList<JEditorPane>();
         jEditorPane1.removeAll();
         panelEditable.setViewportView(jEditorPane1);
+        panes.add(jEditorPane1);
     }//GEN-LAST:event_iconoNuevoProyectoActionPerformed
 
     private void iconoAnadirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirImagenActionPerformed
@@ -481,6 +493,7 @@ public class principal extends javax.swing.JFrame {
             capacity+=1;
             vinetas.addElement("Viñeta "+i);
             listaVinetas.setSelectedIndex(0);
+            panes.add(new JEditorPane());
     }//GEN-LAST:event_edicionInsertarInsertarVActionPerformed
 
     private void edicionInsertarAnadirIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirIPActionPerformed
@@ -587,6 +600,12 @@ public class principal extends javax.swing.JFrame {
             javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
         }
     }//GEN-LAST:event_edicionAnadirCTActionPerformed
+
+    private void listaVinetasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVinetasMouseClicked
+        int selected = listaVinetas.getSelectedIndex();
+        panelEditable.setViewportView(panes.get(selected));
+        
+    }//GEN-LAST:event_listaVinetasMouseClicked
 
     /**
      * @param args the command line arguments

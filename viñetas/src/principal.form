@@ -457,6 +457,9 @@
               <Color id="Cursor de Mano"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="listaVinetasMouseClicked"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JList()"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="vinetas = new DefaultListModel&lt;&gt;();"/>
