@@ -105,7 +105,7 @@ public class principal extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Viñetas v-1.0.3");
+        setTitle("Viñetas v 1.1");
         setBackground(new java.awt.Color(153, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -686,7 +686,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList listaVinetas;
+    protected static javax.swing.JList listaVinetas;
     static private DefaultListModel vinetas;
     private javax.swing.JMenu menuArchivo;
     private javax.swing.JMenu menuAyuda;

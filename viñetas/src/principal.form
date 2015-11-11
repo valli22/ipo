@@ -227,7 +227,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="Vi&#xf1;etas v-1.0.3"/>
+    <Property name="title" type="java.lang.String" value="Vi&#xf1;etas v 1.1"/>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="99" type="rgb"/>
     </Property>
@@ -466,6 +466,7 @@
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="vinetas = new DefaultListModel&lt;&gt;();"/>
             <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="static private DefaultListModel vinetas;"/>
             <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="listaVinetas.setModel(vinetas);"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="12"/>
           </AuxValues>
         </Component>
       </SubComponents>
