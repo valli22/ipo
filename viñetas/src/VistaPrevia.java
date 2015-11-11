@@ -23,6 +23,7 @@ public class VistaPrevia extends javax.swing.JFrame {
      */
     public VistaPrevia() {
         initComponents();
+        this.setTitle("Vista previa");
         setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
         this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
         ArrayList<JEditorPane> aux2 = principal.panes;

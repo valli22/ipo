@@ -19,6 +19,7 @@ public class texto extends javax.swing.JFrame {
      */
     public texto() {
         initComponents();
+        this.setTitle("Añadir texto");
         setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
         this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
     }

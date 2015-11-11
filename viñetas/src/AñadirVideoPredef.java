@@ -21,6 +21,7 @@ public class AñadirVideoPredef extends javax.swing.JFrame {
      */
     public AñadirVideoPredef() {
         initComponents();
+        this.setTitle("Añadir video");
         setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
         this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
     }

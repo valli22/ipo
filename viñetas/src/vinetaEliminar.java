@@ -21,6 +21,7 @@ public class vinetaEliminar extends javax.swing.JFrame {
      */
     public vinetaEliminar() {
         initComponents();
+        this.setTitle("Eliminar viñeta");
         setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
         this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
     }

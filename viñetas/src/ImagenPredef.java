@@ -54,6 +54,7 @@ public class ImagenPredef extends javax.swing.JFrame {
     }
     public ImagenPredef() {
         initComponents();
+        this.setTitle("Añadir imagen predefinida");
         setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
         this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
     }
