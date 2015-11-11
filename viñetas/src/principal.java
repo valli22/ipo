@@ -4,6 +4,7 @@
 import java.awt.Color;
 import java.awt.Frame;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
@@ -434,7 +435,7 @@ public class principal extends javax.swing.JFrame {
         FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("IPO","ipo");
         chooser.setFileFilter(filtroImagen);
         chooser.setDialogTitle("Guardar proyecto");
-        chooser.showOpenDialog(this); 
+        chooser.showSaveDialog(this); 
     }//GEN-LAST:event_archivoGuardarActionPerformed
 
     private void presentacionVistaPreviaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presentacionVistaPreviaActionPerformed
@@ -449,7 +450,7 @@ public class principal extends javax.swing.JFrame {
         FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("IPO","ipo");
         chooser.setFileFilter(filtroImagen);
         chooser.setDialogTitle("Guardar proyecto");
-        chooser.showOpenDialog(this);
+        chooser.showSaveDialog(this);
     }//GEN-LAST:event_iconoGuardarProyectoActionPerformed
 
     private void archivoSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoSalirActionPerformed
@@ -465,11 +466,26 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_archivoAbrirActionPerformed
 
     private void edicionInsertarImportarIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarImportarIActionPerformed
-        JFileChooser chooser = new JFileChooser();
-        FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("JPG, PNG & GIF","jpg","png","gif");
-        chooser.setFileFilter(filtroImagen);
-        chooser.setDialogTitle("Importar imagen");
-        chooser.showOpenDialog(this);
+        if(capacity >= 1){
+            JFileChooser chooser = new JFileChooser();
+            FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("JPG, PNG & GIF","jpg","png","gif");
+            chooser.setFileFilter(filtroImagen);
+            chooser.setDialogTitle("Importar imagen");
+            int seleccion = chooser.showOpenDialog(chooser);
+            if (seleccion == JFileChooser.APPROVE_OPTION){
+                File fichero = chooser.getSelectedFile();
+                String adr = fichero.getAbsolutePath();
+                JLabel etiqueta = new JLabel();
+                ImageIcon imageIcon = new ImageIcon(adr);
+                etiqueta.setIcon(imageIcon);
+                etiqueta.setLocation(100,100);
+                etiqueta.setSize(imageIcon.getIconWidth(),imageIcon.getIconHeight());
+                currentPane.add(etiqueta);
+                currentPane.repaint();
+            }
+        } else {
+            javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
+        }
     }//GEN-LAST:event_edicionInsertarImportarIActionPerformed
 
     private void iconoNuevoProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoNuevoProyectoActionPerformed
@@ -486,11 +502,26 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_iconoNuevoProyectoActionPerformed
 
     private void iconoAnadirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirImagenActionPerformed
-        JFileChooser chooser = new JFileChooser();
-        FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("JPG, PNG & GIF","jpg","png","gif");
-        chooser.setFileFilter(filtroImagen);
-        chooser.setDialogTitle("Importar imagen");
-        chooser.showOpenDialog(this);
+        if (capacity >= 1){
+            JFileChooser chooser = new JFileChooser();
+            FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("JPG, PNG & GIF","jpg","png","gif");
+            chooser.setFileFilter(filtroImagen);
+            chooser.setDialogTitle("Importar imagen");
+            int seleccion = chooser.showOpenDialog(chooser);
+            if (seleccion == JFileChooser.APPROVE_OPTION){
+                File fichero = chooser.getSelectedFile();
+                String adr = fichero.getAbsolutePath();
+                JLabel etiqueta = new JLabel();
+                ImageIcon imageIcon = new ImageIcon(adr);
+                etiqueta.setIcon(imageIcon);
+                etiqueta.setLocation(100,100);
+                etiqueta.setSize(imageIcon.getIconWidth(),imageIcon.getIconHeight());
+                currentPane.add(etiqueta);
+                currentPane.repaint();
+            }
+        } else {
+            javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
+        }
     }//GEN-LAST:event_iconoAnadirImagenActionPerformed
 
     private void edicionFormatoTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionFormatoTActionPerformed
@@ -499,11 +530,15 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_edicionFormatoTActionPerformed
 
     private void edicionInsertarInsertarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarInsertarVActionPerformed
+        if (capacity>=1){
             i++;
             capacity+=1;
             vinetas.addElement("Viñeta "+i);
             listaVinetas.setSelectedIndex(0);
             panes.add(new JEditorPane());
+        }else {
+            javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
+        }
     }//GEN-LAST:event_edicionInsertarInsertarVActionPerformed
 
     private void edicionInsertarAnadirIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionInsertarAnadirIPActionPerformed
@@ -515,15 +550,19 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_edicionInsertarAnadirIPActionPerformed
 
     private void edicionEliminarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionEliminarVActionPerformed
+        if (capacity >= 1){    
             new vinetaEliminar().setVisible(true);
             capacity-=1;
+        }else {
+            javax.swing.JOptionPane. showMessageDialog (this, "No hay viñetas");
+        }
     }//GEN-LAST:event_edicionEliminarVActionPerformed
 
     private void presentacionPresentacionVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presentacionPresentacionVActionPerformed
         Frame principal = null;
         JDialog dialogo = new JDialog(principal,"Presentacion");
         presentacion panel = new presentacion();
-        dialogo.setSize(1500, 1000);
+        dialogo.setSize(1070, 550);
         dialogo.add(panel);
         dialogo.setVisible(true);
     }//GEN-LAST:event_presentacionPresentacionVActionPerformed
@@ -541,7 +580,7 @@ public class principal extends javax.swing.JFrame {
         Frame principal = null;
         JDialog dialogo = new JDialog(principal,"Presentacion");
         presentacion panel = new presentacion();
-        dialogo.setSize(1500, 1000);
+        dialogo.setSize(1070, 550);
         dialogo.add(panel);
         dialogo.setVisible(true);
     }//GEN-LAST:event_iconoPresentacionActionPerformed
@@ -615,7 +654,6 @@ public class principal extends javax.swing.JFrame {
         int selected = listaVinetas.getSelectedIndex();
         currentPane = panes.get(selected);
         panelEditable.setViewportView(currentPane);
-        
     }//GEN-LAST:event_listaVinetasMouseClicked
 
     private void listaVinetasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaVinetasKeyPressed
