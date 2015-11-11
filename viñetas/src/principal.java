@@ -3,6 +3,7 @@
 
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
@@ -29,8 +30,9 @@ public class principal extends javax.swing.JFrame {
      * Creates new form principal
      */
 
-    ArrayList<JEditorPane> panes = new ArrayList<>();
-    int i = 0;
+    public static ArrayList<JEditorPane> panes = new ArrayList<>();
+    public static JEditorPane currentPane;
+    public static int i = 0;
     int capacity=0;
     int i2 = 0;
     static int vinetaEliminada=-1;
@@ -68,6 +70,7 @@ public class principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         panelEditable = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
+        currentPane = jEditorPane1;
         jMenuBar1 = new javax.swing.JMenuBar();
         menuArchivo = new javax.swing.JMenu();
         archivoNuevo = new javax.swing.JMenuItem();
@@ -189,6 +192,11 @@ public class principal extends javax.swing.JFrame {
         listaVinetas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 listaVinetasMouseClicked(evt);
+            }
+        });
+        listaVinetas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                listaVinetasKeyPressed(evt);
             }
         });
         jScrollPane1.setViewportView(listaVinetas);
@@ -381,8 +389,8 @@ public class principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(iconoPresentacion)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(panelEditable, javax.swing.GroupLayout.DEFAULT_SIZE, 1050, Short.MAX_VALUE)))
+                                .addGap(0, 1021, Short.MAX_VALUE))
+                            .addComponent(panelEditable)))
                     .addComponent(jLabel1))
                 .addContainerGap())
         );
@@ -416,8 +424,9 @@ public class principal extends javax.swing.JFrame {
         listaVinetas.setSelectedIndex(0);
         panes = new ArrayList<JEditorPane>();
         jEditorPane1.removeAll();
-        panelEditable.setViewportView(jEditorPane1);
         panes.add(jEditorPane1);
+        currentPane = panes.get(0);
+        panelEditable.setViewportView(currentPane);
     }//GEN-LAST:event_archivoNuevoActionPerformed
 
     private void archivoGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoGuardarActionPerformed
@@ -471,8 +480,9 @@ public class principal extends javax.swing.JFrame {
         listaVinetas.setSelectedIndex(0);
         panes = new ArrayList<JEditorPane>();
         jEditorPane1.removeAll();
-        panelEditable.setViewportView(jEditorPane1);
         panes.add(jEditorPane1);
+        currentPane = panes.get(0);
+        panelEditable.setViewportView(currentPane);
     }//GEN-LAST:event_iconoNuevoProyectoActionPerformed
 
     private void iconoAnadirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconoAnadirImagenActionPerformed
@@ -556,8 +566,8 @@ public class principal extends javax.swing.JFrame {
                 etiqueta.setLocation(550, 250);
                 etiqueta.setSize(207,165);
                 etiqueta.setVisible(true);
-                jEditorPane1.add(etiqueta);
-                jEditorPane1.repaint();
+                currentPane.add(etiqueta);
+                currentPane.repaint();
                 i2++;
             } else {
                 JLabel etiqueta = new JLabel();
@@ -568,8 +578,8 @@ public class principal extends javax.swing.JFrame {
                 etiqueta.setLocation(950, 400);
                 etiqueta.setSize(226,242);
                 etiqueta.setVisible(true);
-                jEditorPane1.add(etiqueta);
-                jEditorPane1.repaint();
+                currentPane.add(etiqueta);
+                currentPane.repaint();
             }
         }else {
             javax.swing.JOptionPane. showMessageDialog (this, "Debe crear un proyecto antes");
@@ -603,10 +613,17 @@ public class principal extends javax.swing.JFrame {
 
     private void listaVinetasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVinetasMouseClicked
         int selected = listaVinetas.getSelectedIndex();
-        panelEditable.setViewportView(panes.get(selected));
+        currentPane = panes.get(selected);
+        panelEditable.setViewportView(currentPane);
         
     }//GEN-LAST:event_listaVinetasMouseClicked
 
+    private void listaVinetasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaVinetasKeyPressed
+        
+    }//GEN-LAST:event_listaVinetasKeyPressed
+    
+    
+            
     /**
      * @param args the command line arguments
      */

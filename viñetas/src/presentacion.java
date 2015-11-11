@@ -29,7 +29,7 @@ public class presentacion extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         panePresentacion = new javax.swing.JEditorPane();
 
-        panePresentacion = principal.jEditorPane1;
+        panePresentacion = principal.currentPane;
         jScrollPane1.setViewportView(panePresentacion);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

@@ -109,8 +109,8 @@ public class AñadirVideoPredef extends javax.swing.JFrame {
         url.setURL("https://www.youtube.com/watch?v=pvvbSzXUT4c");
         url.setLocation(750,50);
         url.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        principal.jEditorPane1.add(url);
-        principal.jEditorPane1.repaint();
+        principal.currentPane.add(url);
+        principal.currentPane.repaint();
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -119,8 +119,8 @@ public class AñadirVideoPredef extends javax.swing.JFrame {
         url.setURL("https://www.youtube.com/watch?v=pvvbSzXUT4c");
         url.setLocation(750,50);
         url.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        principal.jEditorPane1.add(url);
-        principal.jEditorPane1.repaint();
+        principal.currentPane.add(url);
+        principal.currentPane.repaint();
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -129,8 +129,8 @@ public class AñadirVideoPredef extends javax.swing.JFrame {
         url.setURL("https://www.youtube.com/watch?v=pvvbSzXUT4c");
         url.setLocation(750,50);
         url.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        principal.jEditorPane1.add(url);
-        principal.jEditorPane1.repaint();
+        principal.currentPane.add(url);
+        principal.currentPane.repaint();
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -139,8 +139,8 @@ public class AñadirVideoPredef extends javax.swing.JFrame {
         url.setURL("https://www.youtube.com/watch?v=pvvbSzXUT4c");
         url.setLocation(750,50);
         url.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        principal.jEditorPane1.add(url);
-        principal.jEditorPane1.repaint();
+        principal.currentPane.add(url);
+        principal.currentPane.repaint();
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 

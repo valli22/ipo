@@ -138,29 +138,29 @@ public class ImagenPredef extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         ImagenPredef.Imagen Imagen = new ImagenPredef.Imagen(4);
-        principal.jEditorPane1.add(Imagen);
-        principal.jEditorPane1.repaint();
+        principal.currentPane.add(Imagen);
+        principal.currentPane.repaint();
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         ImagenPredef.Imagen Imagen = new ImagenPredef.Imagen(1);
-        principal.jEditorPane1.add(Imagen);
-        principal.jEditorPane1.repaint();
+        principal.currentPane.add(Imagen);
+        principal.currentPane.repaint();
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         ImagenPredef.Imagen Imagen = new ImagenPredef.Imagen(3);
-        principal.jEditorPane1.add(Imagen);
-        principal.jEditorPane1.repaint();
+        principal.currentPane.add(Imagen);
+        principal.currentPane.repaint();
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         ImagenPredef.Imagen Imagen = new ImagenPredef.Imagen(2);
-        principal.jEditorPane1.add(Imagen);
-        principal.jEditorPane1.repaint();
+        principal.currentPane.add(Imagen);
+        principal.currentPane.repaint();
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 

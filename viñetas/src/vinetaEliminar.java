@@ -90,7 +90,9 @@ public class vinetaEliminar extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         principal.vinetaEliminada = parseInt(numerovineta.getText());
-        principal.getVinetas().removeElementAt(principal.vinetaEliminada-1); 
+        principal.getVinetas().removeElementAt(principal.vinetaEliminada-1);
+        principal.panes.remove(principal.vinetaEliminada-1);
+        principal.i--;
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

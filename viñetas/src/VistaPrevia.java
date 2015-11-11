@@ -1,6 +1,11 @@
 
 import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JEditorPane;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,14 +25,66 @@ public class VistaPrevia extends javax.swing.JFrame {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpg")).getImage());
         this.getContentPane().setBackground(Color.getHSBColor(138, 40, 77));
-        for (int i = 0; i< 3; i++){
-            for (int j = 0; j<3; j++){
-                VistaPreviaPanel vista = new VistaPreviaPanel();
-                vista.setVisible(true);
-                vista.setSize(250,250);
-                vista.setLocation(i*275+10, j*275+10);
-                this.add(vista);
-                this.repaint();
+        ArrayList<JEditorPane> aux2 = principal.panes;
+        BufferedImage bi = new BufferedImage(1030,400,BufferedImage.TYPE_INT_RGB);
+        ArrayList<JLabel> aux = new ArrayList<>();
+        for (int p = 0; p < aux2.size(); p++){
+            JLabel aux3 = new JLabel();
+            aux2.get(p).paint(bi.getGraphics());
+            aux3.setIcon(new ImageIcon(bi.getScaledInstance(250, 250, BufferedImage.SCALE_DEFAULT)));
+            bi = new BufferedImage(1030,400,BufferedImage.TYPE_INT_RGB);
+            aux.add(aux3);
+        }
+        int lenght = aux.size();
+        lenght = lenght/3;
+        int cont = 0;
+        if (aux.size()== 1){
+            for (int i = 0; i< 1; i++){
+                for (int j = 0; j<1; j++){
+                    JLabel vista = aux.get(cont);
+                    vista.setVisible(true);
+                    vista.setSize(250,250);
+                    vista.setLocation(i*275+10, j*275+10);
+                    this.add(vista);
+                    this.repaint();
+                    cont++;
+                }
+            }
+        } else if (aux.size() == 2){
+            for (int i = 0; i< 2; i++){
+                for (int j = 0; j<1; j++){
+                    JLabel vista =aux.get(cont);
+                    vista.setVisible(true);
+                    vista.setSize(250,250);
+                    vista.setLocation(i*275+10, j*275+10);
+                    this.add(vista);
+                    this.repaint();
+                    cont++;
+                }
+            }
+        } else if (aux.size() == 3){
+            for (int i = 0; i< 3; i++){
+                for (int j = 0; j<1; j++){
+                    JLabel vista =aux.get(cont);
+                    vista.setVisible(true);
+                    vista.setSize(250,250);
+                    vista.setLocation(i*275+10, j*275+10);
+                    this.add(vista);
+                    this.repaint();
+                    cont++;
+                }
+            }
+        } else {
+            for (int i = 0; (i<lenght+1); i++){
+                for (int j = 0; (j<3)&&(cont<aux.size()); j++){
+                    JLabel vista =aux.get(cont);
+                    vista.setVisible(true);
+                    vista.setSize(250,250);
+                    vista.setLocation(j*275+10, i*275+10);
+                    this.add(vista);
+                    this.repaint();
+                    cont++;
+                }
             }
         }
     }

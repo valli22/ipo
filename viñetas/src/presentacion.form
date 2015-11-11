@@ -35,7 +35,7 @@
       <SubComponents>
         <Component class="javax.swing.JEditorPane" name="panePresentacion">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="panePresentacion = principal.jEditorPane1;"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="panePresentacion = principal.currentPane;"/>
           </AuxValues>
         </Component>
       </SubComponents>
